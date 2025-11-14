@@ -1,12 +1,18 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { authServices } from '../../../services/auth.services';
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    navigate("/login");
+    (async () => {
+      try {
+        await authServices.logout();
+      } catch (err) {
+        console.error('Logout error:', err);
+      }
+    })();
   };
 
   return (

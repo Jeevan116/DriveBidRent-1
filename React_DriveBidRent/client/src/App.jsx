@@ -114,15 +114,15 @@ function App() {
         <Route path="/mechanic/profile" element={<MechanicProfile />} />
       </Route>
 
-      {/* 404 */}
-      <Route
-        path="*"
-        element={
-          <div className="flex items-center justify-center min-h-screen text-2xl font-bold text-gray-700">
-            404 - Page Not Found
-          </div>
-        }
-      />
+        {/* 404 */}
+        <Route
+          path="*"
+          element={
+            <div className="flex items-center justify-center min-h-screen text-2xl font-bold text-gray-700">
+              404 - Page Not Found
+            </div>
+          }
+        />
     </Routes>
   );
 }
